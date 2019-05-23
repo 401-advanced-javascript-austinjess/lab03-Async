@@ -4,7 +4,7 @@ jest.mock('fs');
 
 const reader = require('../../lib/reader.js');
 
-xdescribe('File Reader Module', () => {
+describe('File Reader Module', () => {
   it('when given a bad file, returns an error', (done) => {
     let files = ['bad.txt', 'good.txt', 'good.txt'];
     // In jest, throwing errors obviously kills the app, so if you're

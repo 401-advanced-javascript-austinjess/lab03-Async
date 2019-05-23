@@ -2,26 +2,26 @@
 
 jest.mock('fs');
 
-const reader = require('../../lib/reader-async.js');
+const readAll = require('../../lib/reader-async.js');
 
-xdescribe('Async File Reader Module', async () => {
-  it('when given a bad file, returns an error', (done) => {
+describe('Async File Reader Module', () => {
+  it('when given a bad file, returns an error', async () => {
     let files = ['bad.txt', 'good.txt', 'good.txt'];
+    try {
+      let result = await readAll(files);
+      expect(result).toBeUndefined();
+    } catch (err) {
+      expect(err).toBeDefined();
+    }
+  });
+
+  it('can read 3 files', async () => {
+    let files = ['good.txt', 'good.txt', 'good.txt'];
+    try {
+      let result = await readAll(files);
+      expect(result).toHaveLength(3);
+    } catch (err) {
+      expect(err).not.toBeDefined();
+    }
   });
 });
-
-// it('runs with async/await (good result/resolve)', async () => {
-//   try {
-//     let result = await asyncModule.promiserOfThings('do something');
-//     expect(result).toEqual('do something');
-//   }
-//   catch(err) { expect(err).not.toBeDefined(); }
-// });
-
-// it('runs with async/await (bad result/reject)', async () => {
-//   try {
-//     let result = await asyncModule.promiserOfThings(false)
-//     expect(result).toBeUndefined();
-//   }
-//   catch(err) { expect(err).toBeDefined(); }
-// });

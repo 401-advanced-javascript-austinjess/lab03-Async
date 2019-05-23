@@ -1,4 +1,4 @@
-const fileReader = require('./lib/reader.js');
+// const fileReader = require('./lib/reader.js');
 const asyncFileReader = require('./lib/reader-async.js');
 
 // Obtain and assert input
