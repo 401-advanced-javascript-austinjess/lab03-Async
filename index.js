@@ -19,12 +19,12 @@ if (!(files instanceof Array && files.length)) {
 
 // asyncFileReader(files);
 
-promiseFileReader(files);
-// const fileToEdit = process.argv.slice(2).toString();
+// promiseFileReader(files);
+const fileToEdit = process.argv.slice(2).toString();
 
-// editFile(fileToEdit, (err, data) => {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log('After Data - ', data);
-// });
+editFile(fileToEdit, (err, data) => {
+  if (err) {
+    throw err;
+  }
+  console.log('After Data - ', data);
+});
