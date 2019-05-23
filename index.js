@@ -1,6 +1,7 @@
-const fileReader = require('./reader.js/index.js');
+const fileReader = require('./lib/reader.js');
 
 // Obtain and assert input
+console.log(process.argv);
 const files = process.argv.slice(2);
 
 if (!(files instanceof Array && files.length)) {
