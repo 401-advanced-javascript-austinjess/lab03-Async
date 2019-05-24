@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR]()
+- [submission PR](https://github.com/401-advanced-javascript-austinjess/lab03-Async/pull/7)
 - [travis](https://travis-ci.com/401-advanced-javascript-austinjess/lab03-Async)
 
 ### Modules
