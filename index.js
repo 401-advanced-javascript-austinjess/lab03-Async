@@ -10,21 +10,21 @@ if (!(files instanceof Array && files.length)) {
   throw new Error('Invalid Args');
 }
 
-// fileReader(files, (err, data) => {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log('From Callback:', data);
-// });
+fileReader(files, (err, data) => {
+  if (err) {
+    throw err;
+  }
+  console.log('From Callback:', data);
+});
 
-// asyncFileReader(files);
+asyncFileReader(files);
 
 promiseFileReader(files);
-// const fileToEdit = process.argv.slice(2).toString();
+const fileToEdit = process.argv.slice(2).toString();
 
-// editFile(fileToEdit, (err, data) => {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log('After Data - ', data);
-// });
+editFile(fileToEdit, (err, data) => {
+  if (err) {
+    throw err;
+  }
+  console.log('After Data - ', data);
+});
